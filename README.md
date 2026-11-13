@@ -1,4 +1,4 @@
-# Agendamento de Atendimento – Assistência Estudantil (IFRN SGA)
+# Agendamento de Atendimento – Assistência Estudantil 
 
 Sistema web para solicitar e organizar agendamentos de atendimento da Assistência Estudantil / Serviço Social do IFRN – Campus SGA.
 
@@ -14,6 +14,7 @@ O sistema busca resolver a organização dos atendimentos: cada pedido fica regi
 - Evitar conflitos de horário, impedindo dois agendamentos no mesmo dia e horário.
 - Centralizar os pedidos em um painel, para que a equipe consulte, filtre e atualize a situação de cada um.
 - Praticar o desenvolvimento web com Django, banco de dados e controle de versão com Git e GitHub.
+- Facilitar o atendimento, pois não tem essa opção pelo suap 
 
 ## Funcionalidades
 
@@ -23,7 +24,7 @@ O sistema busca resolver a organização dos atendimentos: cada pedido fica regi
 - **Validação dos dados** no envio:
   - a data deve ser a partir do dia seguinte, de segunda a sexta-feira;
   - o horário não pode já estar reservado para aquele dia;
-  - a matrícula deve ter apenas números (de 10 a 14 dígitos);
+  - a matrícula deve ter apenas números 
   - o telefone deve ter DDD e número (10 ou 11 dígitos).
 - **Liberação de horário:** quando um agendamento é marcado como cancelado, o horário volta a ficar disponível.
 - **Página de confirmação** com o número do protocolo e o resumo do agendamento.
@@ -124,29 +125,6 @@ O comando pede nome de usuário, e-mail e senha. Esse login dá acesso ao painel
 python manage.py runserver
 ```
 
-### 8. Acessar o sistema
-
-- **Formulário de agendamento:** http://127.0.0.1:8000
-- **Painel administrativo:** http://127.0.0.1:8000/admin
-
-Para parar o servidor, use `Ctrl+C`.
-
-### Linux e macOS
-
-A única diferença é a ativação do ambiente virtual:
-
-```bash
-source venv/bin/activate
-```
-
-### Nas próximas vezes
-
-Basta ativar o ambiente e iniciar o servidor:
-
-```bash
-venv\Scripts\activate
-python manage.py runserver
-```
 
 ## Estrutura do projeto
 
@@ -174,10 +152,10 @@ Projeto-Django/
 
 ## Equipe
 
-| Integrante | Função |
+| Integrante 
 |---|---|
-| [Nome do integrante 1] | [Ex.: desenvolvimento] |
-| [Nome do integrante 2] | [Ex.: interface] |
-| [Nome do integrante 3] | [Ex.: documentação] |
+| [ Alice laila] | 
+| Marjorie Cecilia | 
+
 
 **Instituição:** Instituto Federal do Rio Grande do Norte (IFRN) – Campus SGA
