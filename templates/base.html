@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block titulo %}Agendamento{% endblock %} · IFRN SGA</title>
+    <style>
+        :root {
+            --verde: #ff95df;
+            --verde-escuro: #e056d5;
+            --fundo: #ffffff;
+            --texto: #222;
+            --borda: #9851e9;
+            --erro: #b3261e;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--fundo);
+            color: var(--texto);
+            line-height: 1.5;
+        }
+        header {
+            background: var(--verde);
+            color: white;
+            padding: 18px 16px;
+            text-align: center;
+        }
+        header strong { display: block; font-size: 1.25rem; }
+        header span { font-size: .9rem; opacity: .95; }
+        .container {
+            max-width: 720px;
+            margin: 24px auto;
+            padding: 0 16px;
+        }
+        .cartao {
+            background: white;
+            border-radius: 10px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+        }
+        h1 { margin-top: 0; color: var(--verde-escuro); font-size: 1.5rem; }
+        .aviso {
+            background: #ffa5e4;
+            border-left: 4px solid var(--verde);
+            padding: 12px 14px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: .95rem;
+        }
+        .grade { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .campo { display: flex; flex-direction: column; }
+        .inteiro { grid-column: 1 / -1; }
+        label { font-weight: bold; margin-bottom: 4px; font-size: .95rem; }
+        input, select, textarea {
+            padding: 10px;
+            border: 1px solid var(--borda);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            width: 100%;
+            background: white;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: 2px solid var(--verde);
+            border-color: var(--verde);
+        }
+        .errorlist {
+            list-style: none;
+            margin: 4px 0 0;
+            padding: 0;
+            color: var(--erro);
+            font-size: .88rem;
+        }
+        .erro-geral {
+            background: #fdecea;
+            color: var(--erro);
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+        }
+        button, .botao {
+            display: inline-block;
+            background: var(--verde);
+            color: white;
+            border: 0;
+            border-radius: 6px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        button:hover, .botao:hover { background: var(--verde-escuro); }
+        .privacidade { font-size: .82rem; color: #666; margin-top: 14px; }
+        .resumo { width: 100%; border-collapse: collapse; margin: 16px 0 24px; }
+        .resumo th, .resumo td { text-align: left; padding: 10px 8px; border-bottom: 1px solid #e5ebe7; }
+        .resumo th { width: 40%; color: #555; font-weight: normal; }
+        footer { text-align: center; font-size: .85rem; color: #777; padding: 16px; }
+        @media (max-width: 560px) {
+            .grade { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <strong>Assistência Estudantil · Serviço Social</strong>
+        <span>IFRN · Campus SGA</span>
+    </header>
+    <main class="container">
+        {% block conteudo %}{% endblock %}
+    </main>
+    <footer>Agendamento de atendimento · IFRN SGA</footer>
+</body>
+</html>

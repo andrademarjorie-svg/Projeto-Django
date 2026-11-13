@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block titulo %}Agendar atendimento{% endblock %}
+
+{% block conteudo %}
+<div class="cartao">
+    <h1>Agendar atendimento</h1>
+
+    <div class="aviso">
+        O atendimento acontece de segunda a sexta-feira. Seu agendamento ficará
+        <strong>pendente</strong> até a confirmação da equipe da Assistência Estudantil.
+    </div>
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+            <div class="erro-geral">{{ form.non_field_errors }}</div>
+        {% endif %}
+
+        <div class="grade">
+            {% for campo in form %}
+                <div class="campo {% if campo.name in 'nome curso email tipo observacoes' %}inteiro{% endif %}">
+                    <label for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+                    {{ campo }}
+                    {{ campo.errors }}
+                </div>
+            {% endfor %}
+        </div>
+
+        <p style="margin-top: 24px;">
+            <button type="submit">Solicitar agendamento</button>
+        </p>
+
+        <p class="privacidade">
+            Os dados informados são usados apenas para organizar o atendimento da Assistência Estudantil.
+        </p>
+    </form>
+</div>
+{% endblock %}

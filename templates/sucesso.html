@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block titulo %}Agendamento solicitado{% endblock %}
+
+{% block conteudo %}
+<div class="cartao">
+    <h1>Agendamento solicitado!</h1>
+
+    <p>
+        Olá, <strong>{{ agendamento.nome }}</strong>. Recebemos o seu pedido.
+        Ele ficará <strong>pendente</strong> até a confirmação da equipe.
+    </p>
+
+    <table class="resumo">
+        <tr><th>Protocolo</th><td>{{ agendamento.protocolo }}</td></tr>
+        <tr><th>Data</th><td>{{ agendamento.data|date:"d/m/Y" }}</td></tr>
+        <tr><th>Horário</th><td>{{ agendamento.get_horario_display }}</td></tr>
+        <tr><th>Tipo de atendimento</th><td>{{ agendamento.get_tipo_display }}</td></tr>
+        <tr><th>Situação</th><td>{{ agendamento.get_status_display }}</td></tr>
+    </table>
+
+    <p>Guarde o número do protocolo.</p>
+
+    <a class="botao" href="{% url 'agendar' %}">Fazer novo agendamento</a>
+</div>
+{% endblock %}
